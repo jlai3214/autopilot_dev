@@ -37,23 +37,23 @@ public class Salesforce {
 	public Alert alert;
 	public static String myRunStatus;
 	public static List stepLog = new ArrayList();
-		public static WebElement myElement = null;
-		public static List <WebElement> myElements = null;
-		public static WebElement myElement_unSelected;
-		public static WebElement myElement_Selected;
-		public static String myTestStep;
-		public static int myRow;	
-		public static boolean myRun;	
-		public static String search = "lksrch";
+	public static WebElement myElement = null;
+	public static List <WebElement> myElements = null;
+	public static WebElement myElement_unSelected;
+	public static WebElement myElement_Selected;
+	public static String myTestStep;
+	public static int myRow;	
+	public static boolean myRun;	
+	public static String search = "lksrch";
 
-		public static String myPicklist,  myPicklistElementID;
-		public static Utility util = new Utility();
-		public static String $parentHandle,$childHandle;
+	public static String myPicklist,  myPicklistElementID;
+	public static Utility util = new Utility();
+	public static String $parentHandle,$childHandle;
 		
-		public static List myWTElementsList = new ArrayList();
-		public static int myWTColumn, myWTRow;
+	public static List myWTElementsList = new ArrayList();
+	public static int myWTColumn, myWTRow;
 		
-		public static int stdtime = 2000; 	//sleep time in millsecond
+	public static int stdtime = 2000; 	//sleep time in millsecond
 		public static int timeoutMs = 5000;
 		public static String traceMessage;
 		public static Boolean trace;

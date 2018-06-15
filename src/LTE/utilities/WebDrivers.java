@@ -26,27 +26,25 @@ import com.rhi.qa.myGalaxy;
 
 public class WebDrivers  {
 	
-		public static WebDriver driver;
-		public static String browser;
-		public static String operatingSys;
-		public static String version;
-		public static String traceMessage;
-		//public static Boolean trace =false;
+	public static WebDriver driver;
+	public static String browser;
+	public static String operatingSys;
+	public static String version;
+	public static String traceMessage;
+	//public static Boolean trace =false;
 	
-		
-		public static void getBrowser(String mydriver, String URL)  throws Exception { 
+	public static void getBrowser(String mydriver, String URL)  throws Exception { 
 			
-			switch(mydriver.toUpperCase()) {
+		switch(mydriver.toUpperCase()) {
+		case "CHROME": {
+	     	getChromeDriver();
+	     		break;
+	     	}	
 
-	     		case "CHROME": {
-	     			getChromeDriver();
-	     			break;
-	     		}	
-
-	     		case "FIREFOX": {  
-		     			getFirefoxDriver();
-		     			break;
-		     	}
+	     case "FIREFOX": {  
+	    	 getFirefoxDriver();
+		     break;
+	     }
 		     	case "IE":
 		     	case "IE9":
 		     	case "IE10":

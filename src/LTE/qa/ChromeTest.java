@@ -29,7 +29,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 @RunWith(BlockJUnit4ClassRunner.class)
 public class ChromeTest extends TestCase {
  
-		private static ChromeDriverService service;
+		private static ChromeDriverService servic
 		private WebDriver driver;
  
 		@BeforeClass
