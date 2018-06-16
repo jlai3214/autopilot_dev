@@ -1,4 +1,4 @@
-package LTE.qa;
+package main.java.qa;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package LTE.apps;
+package main.java.apps;
 
 
 
@@ -19,10 +19,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import LTE.qa.TestResultLog;
 import LTE.qa.myGalaxy;
-import LTE.utilities.Utility;
-import LTE.utilities.WebDrivers;
+import main.java.qa.TestResultLog;
+import main.java.utilities.Utility;
+import main.java.utilities.WebDrivers;
 import LET.utilities.WebElements;
 //import com.thoughtworks.selenium.Selenium;
 

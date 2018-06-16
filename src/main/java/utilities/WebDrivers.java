@@ -1,14 +1,14 @@
-package LTE.utilities;
+package main.java.utilities;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+//import org.junit.After;
+//import org.junit.AfterClass;
+//import org.junit.Before;
+//import org.junit.BeforeClass;
+//import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,50 +21,48 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.Capabilities;
 
-import com.rhi.qa.myGalaxy;
-
 
 public class WebDrivers  {
 	
-		public static WebDriver driver;
-		public static String browser;
-		public static String operatingSys;
-		public static String version;
-		public static String traceMessage;
-		//public static Boolean trace =false;
+	public static WebDriver driver;
+	public static String browser;
+	public static String operatingSys;
+	public static String version;
+	public static String traceMessage;
+	//public static Boolean trace =false;
 	
 		
-		public static void getBrowser(String mydriver, String URL)  throws Exception { 
+	public static void getBrowser(String mydriver, String URL)  throws Exception { 
 			
-			switch(mydriver.toUpperCase()) {
+		switch(mydriver.toUpperCase()) {
+		case "CHROME": {
+			getChromeDriver();
+	     	break;
+		}	
 
-	     		case "CHROME": {
-	     			getChromeDriver();
-	     			break;
-	     		}	
-
-	     		case "FIREFOX": {  
-		     			getFirefoxDriver();
-		     			break;
-		     	}
-		     	case "IE":
-		     	case "IE9":
-		     	case "IE10":
-		     	case "IE 32-bit":
-		     	case "IE 64-bit": {
-		     		getIEDriver(mydriver);
-		     		break;
-		     	}
-			}
+	     case "FIREFOX": {  
+	    	 getFirefoxDriver();
+		     break;
+	     }
+	     
+	    case "IE":
+	    case "IE9":
+	    case "IE10":
+	    case "IE 32-bit":
+	    case "IE 64-bit": {
+	    	 getIEDriver(mydriver);
+	    	 break;
+	    }
+		}
 			
-			Capabilities cap = (Capabilities) ((RemoteWebDriver) driver).getCapabilities();
-			browser =  cap.getBrowserName().toLowerCase();
-			operatingSys = cap.getPlatform().toString();
-			version = cap.getVersion().toString();
-			System.out.print("[Browser]=:" +browser + "; ");
-			System.out.print("[Operating System]=:"+ operatingSys + "; ");
-			System.out.println("[Version]=:" + version);
-		}		
+		Capabilities cap = (Capabilities) ((RemoteWebDriver) driver).getCapabilities();
+		browser =  cap.getBrowserName().toLowerCase();
+		operatingSys = cap.getPlatform().toString();
+		version = cap.getVersion().toString();
+		System.out.print("[Browser]=:" +browser + "; ");
+		System.out.print("[Operating System]=:"+ operatingSys + "; ");
+		System.out.println("[Version]=:" + version);
+	}		
 		
 		public static void getChromeDriver() throws Exception  {
 			

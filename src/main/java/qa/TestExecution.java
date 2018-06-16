@@ -1,4 +1,4 @@
-package LTE.qa;
+package main.java.qa;
 
 import static org.junit.Assert.fail;
 

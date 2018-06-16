@@ -1,4 +1,4 @@
-package LTE.qa;
+package main.java.qa;
 
 import java.awt.Desktop;
 import java.io.File;

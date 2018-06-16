@@ -1,4 +1,4 @@
-package LTE.qa;
+package main.java.qa;
 
 import org.junit.Test;
 

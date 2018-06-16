@@ -1,4 +1,4 @@
-package LTE.utilities;
+package main.java.utilities;
 
 import java.awt.AWTException;
 import java.awt.HeadlessException;
