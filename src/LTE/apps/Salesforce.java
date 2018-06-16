@@ -20,11 +20,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import LTE.qa.TestResultLog;
-import LTE.qa.myGalaxy;
 import LTE.utilities.Utility;
 import LTE.utilities.WebDrivers;
-import LET.utilities.WebElements;
-//import com.thoughtworks.selenium.Selenium;
+import LTE.utilities.WebElements;
 
 public class Salesforce {
 
