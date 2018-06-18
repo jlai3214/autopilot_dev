@@ -10,17 +10,28 @@ import java.util.concurrent.TimeUnit;
 //import org.junit.BeforeClass;
 //import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.Capabilities;
 
+//import io.appium.java_client.AppiumDriver;
+//import io.appium.java_client.MobileElement;
+//import io.appium.java_client.android.AndroidDriver;
+//import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
+import org.testng.*;
 
 public class WebDrivers  {
 	
@@ -40,7 +51,7 @@ public class WebDrivers  {
 	     	break;
 		}	
 
-	     case "FIREFOX": {  
+	    case "FIREFOX": {  
 	    	 getFirefoxDriver();
 		     break;
 	     }
@@ -63,49 +74,49 @@ public class WebDrivers  {
 		System.out.print("[Operating System]=:"+ operatingSys + "; ");
 		System.out.println("[Version]=:" + version);
 	}		
-		
-		public static void getChromeDriver() throws Exception  {
-			
-				System.setProperty("webdriver.chrome.driver", "Z:/JSAT/Galaxy/Referenced Libraries/webDriver/chromedriver.exe");
-				ChromeDriverService service;
-				service = new ChromeDriverService.Builder()
-				.usingDriverExecutable(new File("c:/JSAT 2.5/Galaxy/Referenced Libraries/WebDrivers/chromedriver.exe"))
-				//.usingDriverExecutable(new File("c:/JSAT/Galaxy/Referenced Libraries/webDriver/chromedriver.exe"))
-				//		.usingDriverExecutable(new File(myGalaxy.myBrowserDriverDir + "Chromedriver.exe"))
-				.usingAnyFreePort()
-				.build();
-				service.start();
-				driver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
-		}					
 	
-		public static void getIEDriver(String version) throws Exception  {
+	
+	public static void getChromeDriver() throws Exception  {
 			
-				String bit = "Win 32";   //default 32 bit
-				if (version.endsWith("32-bit")) {
-					bit = "Win 32";
-				}
-				else if (version.endsWith("64-bit")) {
-					bit = "Win 64";
-				}
-				//String $refFolder = "z://JSAT/Galaxy/Referenced Libraries/WebDrivers/" + bit + "/" ;
-				String $refFolder = "c://JSAT 2.5/Galaxy/Referenced Libraries/WebDrivers/" + bit + "/" ;
+		System.setProperty("webdriver.chrome.driver", "Z:/JSAT/Galaxy/Referenced Libraries/webDriver/chromedriver.exe");
+		ChromeDriverService service;
+		service = new ChromeDriverService.Builder()
+			.usingDriverExecutable(new File("c:/JSAT 2.5/Galaxy/Referenced Libraries/WebDrivers/chromedriver.exe"))
+			.usingAnyFreePort()
+			.build();
+			service.start();
+			driver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
+	}					
+	
+	
+	public static void getIEDriver(String version) throws Exception  {
+			
+		String bit = "Win 32";   //default 32 bit
+		if (version.endsWith("32-bit")) {
+			bit = "Win 32";
+			}
+		else if (version.endsWith("64-bit")) {
+			bit = "Win 64";
+		}
+			//String $refFolder = "z://JSAT/Galaxy/Referenced Libraries/WebDrivers/" + bit + "/" ;
+		String $refFolder = "c://JSAT 2.5/Galaxy/Referenced Libraries/WebDrivers/" + bit + "/" ;
 				
-				File file = new File( $refFolder  +"IEDriverServer.exe");
-				//System.setProperty("webdriver.ie.driver",  myGalaxy.myBrowserDriverDir + "IEDriverServer.exe");
-				//System.setProperty("webdriver.ie.driver",  "S://JSAT/Galaxy/Referenced Libraries/WebDrivers/" + "IEDriverServer.exe");
-				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-				driver = new InternetExplorerDriver();
- 			}					
+		File file = new File( $refFolder  +"IEDriverServer.exe");
+		//System.setProperty("webdriver.ie.driver",  myGalaxy.myBrowserDriverDir + "IEDriverServer.exe");
+		//System.setProperty("webdriver.ie.driver",  "S://JSAT/Galaxy/Referenced Libraries/WebDrivers/" + "IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+		driver = new InternetExplorerDriver();
+ 	}					
 
-		public static void getFirefoxDriver() throws Exception  {
+	public static void getFirefoxDriver() throws Exception  {
 				
-				System.setProperty("webdriver.firefox.profile","JSAT");
+		System.setProperty("webdriver.firefox.profile","JSAT");
 				//System.setProperty("webdriver.firefox.profile","Default User");
 				//System.setProperty("webdriver.firefox.profile","Selenium");
 	 			
-				DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, false);
-				driver = new FirefoxDriver(capabilities);
-		}					
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, false);
+		driver = new FirefoxDriver(capabilities);
+	}					
 	
-	}
+}

@@ -10,59 +10,51 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-
-
-import com.rhi.apps.PeopleSoft;
-//import com.rhi.apps.ITMCC;
-import com.rhi.apps.Salesforce;
-import com.rhi.qa.TestCheckpoint;
-import com.rhi.qa.TestExecution;
-import com.rhi.qa.TestResultLog;
-import com.rhi.qa.myGalaxy;
+import main.java.apps.Salesforce;
+import main.java.qa.TestCheckpoint;
+import main.java.qa.TestExecution;
+import main.java.qa.TestResultLog;
+import main.java.qa.Validation;
 
 public class WebElements {
 
-		public Alert alert;
-		public static List myStep, myData, myWEC;
-		public static String myWEI, myWEType, myIdentifer, myValue, myLabel, myFrame;
-		public static String myURL;
-		public static String myRunStatus;
-		public static List stepLog = new ArrayList();
-		public static WebElement myElement = null;
-		public static List <WebElement> myElements = null;
-		public static List myWTElements = new ArrayList();
-		public static String myTestStep;
-		public static int stdtime = 2000; 	//sleep time in millsecond
-		public static int timeoutMs = 5000;
-		public static int myRow;	
+	public Alert alert;
+	public static List myStep, myData, myWEC;
+	public static String myWEI, myWEType, myIdentifer, myValue, myLabel, myFrame;
+	public static String myURL;
+	public static String myRunStatus;
+	public static List stepLog = new ArrayList();
+	public static WebElement myElement = null;
+	public static List <WebElement> myElements = null;
+	public static List myWTElements = new ArrayList();
+	public static String myTestStep;
+	public static int stdtime = 2000; 	//sleep time in millsecond
+	public static int timeoutMs = 5000;
+	public static int myRow;	
 		
-		public static String traceMessage;
-		public static Boolean trace; 
-		public static String myScrLvl = "";
-		public static int myStepNbr;
-		public static Boolean positiveMode; 
-		public static String myExpectedValue, myActualValue;
-		public static Boolean getWEIValueMode, findWEIMode;
+	public static String traceMessage;
+	public static Boolean trace; 
+	public static String myScrLvl = "";
+	public static int myStepNbr;
+	public static Boolean positiveMode; 
+	public static String myExpectedValue, myActualValue;
+	public static Boolean getWEIValueMode, findWEIMode;
 		
-		
-		
-		//Step Log
-		public static String myTestData, myDesc, myScreenShotFile;
-		public static Date myTimeStart, myTimeEnd;
-		public static String myApps = "PS";
+	//Step Log
+	public static String myTestData, myDesc, myScreenShotFile;
+	public static Date myTimeStart, myTimeEnd;
+	public static String myApps = "PS";
 	
-		public static Boolean myRun = true,storedInputValueMode = false, storedOutputValueMode = false, checkpointMode = false;
+	public static Boolean myRun = true,storedInputValueMode = false, storedOutputValueMode = false, checkpointMode = false;
 			
-		public static void runStep(WebDriver driver, List runTestStep) throws Exception {
+	public static void runStep(WebDriver driver, List runTestStep) throws Exception {
 
-				trace = new Boolean (Validation.trace);
+	trace = new Boolean (Validation.trace);
 				Setup(driver, runTestStep);
 				//App Specific
 				if (myApps.contentEquals(myIdentifer)) {
